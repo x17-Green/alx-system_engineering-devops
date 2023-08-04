@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo chown shcool hello
+chgrp shcool hello
