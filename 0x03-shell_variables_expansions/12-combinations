@@ -1,0 +1,2 @@
+#!/bin/bash
+eco {a..z}{a..b} | tr ' ' '\n' | grep -v "oo"
