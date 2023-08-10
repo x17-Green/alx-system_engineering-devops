@@ -1,3 +1,3 @@
-# shell-permissions
+# :crossed_swords: Shell Permissions
 
-learning how to set file, directory permisions on shell
+learning how to set file, directory permissions on shell
