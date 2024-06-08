@@ -23,7 +23,7 @@ You can access your server information in the [my servers](https://intranet.alxs
 
 **For reference:**
 
-- [Understanding the SSH Encryption and Connection Process](https://intranet.alxswe.com/rltoken/JB-Vi4dR3q6nF4MBhsn8kQ "Understanding the SSH Encryption and Connection Process")
+- [Understanding the SSH Encryption and Connection Process](https://www.digitalocean.com/community/tutorials/understanding-the-ssh-encryption-and-connection-process "Understanding the SSH Encryption and Connection Process")
 - [Secure Shell Wiki](https://intranet.alxswe.com/rltoken/SpiYWE79Yfr_vWDg42dzCw "Secure Shell Wiki")
 - [IETF RFC 4251 (Description of the SSH Protocol)](https://intranet.alxswe.com/rltoken/f2O0OQq9tch2MYeNAzkg5w "IETF RFC 4251 (Description of the SSH Protocol)")
 - [Internet Engineering Task Force](https://intranet.alxswe.com/rltoken/gd1W1UvB0KeJVWwM8BLvhA "Internet Engineering Task Force")
