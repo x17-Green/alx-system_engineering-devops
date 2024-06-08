@@ -1,5 +1,5 @@
 # puppet file to configure the ssh config file
-file { '/etc/ssh/ssh_config':
+file {'/etc/ssh/ssh_config':
   ensure => present,
   content => "
 Host school
