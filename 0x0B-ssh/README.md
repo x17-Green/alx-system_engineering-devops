@@ -78,10 +78,10 @@ Requirements:
 - You do not need to handle the case of a private key protected by a passphrase
 
 ```
-sylvain@ubuntu$ ./0-use_a_private_key
+green@greenhouse$ ./0-use_a_private_key
 ubuntu@server01:~$ exit
 Connection to 8.8.8.8 closed.
-sylvain@ubuntu$ 
+green@greenhouse$ 
 ```
 - Solution File: [0-use_a_private_key](./`0-use_a_private_key`)
 
