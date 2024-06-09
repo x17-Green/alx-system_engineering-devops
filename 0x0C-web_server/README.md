@@ -168,3 +168,44 @@ Requirements:
 - You can’t use `systemctl` for restarting `nginx`
 
 Server terminal:
+```
+ubuntu@493014-web-01:~$ sudo su
+root@493014-web-01:/home/ubuntu# ./1-install_nginx_web_server > /dev/null 2>&1
+root@493014-web-01:/home/ubuntu# curl localhost
+Hello World!
+root@493014-web-01:/home/ubuntu# exit
+```
+Local Terminal:
+```
+└─[$] <git:(main*)> curl 100.25.140.95
+Hello World!%                            └─[$] <git:(main*)> curl -sI 100.25.140.95
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Sun, 09 Jun 2024 15:21:02 GMT
+Content-Type: application/octet-stream
+Content-Length: 12
+Connection: keep-alive
+
+└─[$] <git:(main*)> 
+```
+> In this example `34.198.248.145` is the IP of my `web-01` server. If you want to query the Nginx that is locally installed on your server, you can use `curl 127.0.0.1`.
+
+If things are not going as expected, make sure to check out Nginx logs, they can be found in `/var/log/`.
+
+**Maarten’s PRO-tip:** When you use `sudo su` on your web-01 you can become root like this to test your file:
+```
+└─[$] <git:(main*)> sudo su
+[sudo] password for green: 
+[greenhouse 0x0C-web_server]#
+```
+- Solution File: [1-install_nginx_web_server](./1-install_nginx_web_server)
+
+---
+
+### `2. `Setup a domain name
+> [.TECH Domains](https://get.tech/ ".TECH Domains") is one of the top domain providers. They are known for the stability and quality of their DNS hosting solution. We partnered with .TECH Domains so that you can learn about DNS.
+
+**YOU** can have a **free .tech domain** for 1 year by following these steps:
+
+- Access the [tools space](https://intranet.alxswe.com/dashboards/my_tools "tools space")
+- Unlock the **GitHub student pack**: WARNING - this invitation link is unique to you and can’t be reclaimed! If you have any issue, please contact [GitHub education support](https://support.github.com/request/landing "GitHub education support")
