@@ -146,3 +146,25 @@ Usage: ./0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY
 404.html
 └─[$] <git:(main*)>
 ```
+- Solution File: [0-transfer_file](./0-transfer_file)
+
+---
+
+### `1.` Install nginx web server
+![meme](./img/f0f2001.jpg)
+> Readme:
+
+- [-y on apt-get command](https://askubuntu.com/questions/672892/what-does-y-mean-in-apt-get-y-install-command "-y on apt-get command")
+
+> Web servers are the piece of software generating and serving HTML pages, let’s install one!
+
+Requirements:
+
+- Install `nginx` on your `web-01`
+- server
+- Nginx should be listening on port 80
+- When querying Nginx at its root `/` with a GET request (requesting a page) using `curl`, it must return a page that contains the string `Hello World!`
+- As an answer file, write a Bash script that configures a new Ubuntu machine to respect above requirements (this script will be run on the server itself)
+- You can’t use `systemctl` for restarting `nginx`
+
+Server terminal:
