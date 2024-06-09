@@ -10,8 +10,7 @@ _For this project, we expect you to look at this concept:_
 ![web_server](./img/8Gu52Qv.png)
 
 ## Background Context
-![Web Server](https://www.youtube.com/watch?v=AZg4uJkEa-4&feature=youtu.be&hd=1)
-
+[![](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-sysadmin_devops/266/Screenshot+2017-07-06+19.24.05.png)](https://www.youtube.com/watch?v=AZg4uJkEa-4&feature=youtu.be&hd=1)
 > In this project, some of the tasks will be graded on 2 aspects:
 
 1. Is your `web-01` server configured according to requirements
@@ -45,15 +44,15 @@ Tips: to test your answer Bash script, feel free to reproduce the checker enviro
 
 **Read or watch**:
 
-- [How the web works](https://intranet.alxswe.com/rltoken/6TI3HiyFdwrbXWKVF24Gxw "How the web works")
-- [Nginx](https://intranet.alxswe.com/rltoken/vkVMGlaf39j2DWAQWzo6EA "Nginx")
-- [How to Configure Nginx](https://intranet.alxswe.com/rltoken/zKrpVxWuUHVdW4URAjdFbw "How to Configure Nginx")
-- [Child process concept page](https://intranet.alxswe.com/rltoken/Ar18u5sRis1fkvkVgzdcqg "Child process concept page")
-- [Root and sub domain](https://intranet.alxswe.com/rltoken/xi3peVqYl02PfpHHHlCtxQ "Root and sub domain")
-- [HTTP requests](https://intranet.alxswe.com/rltoken/sBrrP4EAmI3NoYjIgZrUhw "HTTP requests")
-- [HTTP redirection](https://intranet.alxswe.com/rltoken/Eaa4ZuKvye941hTkP8VlBQ "HTTP redirection")
-- [Not found HTTP response code](https://intranet.alxswe.com/rltoken/eJSp2QFTY6jqqNtz8OVDEw "Not found HTTP response code")
-- [Logs files on Linux](https://intranet.alxswe.com/rltoken/7WMNY5CWD-CBrxmQrdmfPg "Logs files on Linux")
+- [How the web works](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works "How the web works")
+- [NGINX](https://en.wikipedia.org/wiki/Nginx "Nginx")
+- [How to Configure Nginx](https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-16-04 "How to Configure Nginx")
+- [Child process concept page](https://intranet.alxswe.com/concepts/110 "Child process concept page")
+- [Root and sub domain](https://landingi.com/help/domains-vs-subdomains/ "Root and sub domain")
+- [HTTP requests](https://www.tutorialspoint.com/http/http_methods.htm "HTTP requests")
+- [HTTP redirection](https://moz.com/learn/seo/redirection "HTTP redirection")
+- [Not found HTTP response code](https://en.wikipedia.org/wiki/HTTP_404 "Not found HTTP response code")
+- [Logs files on Linux](https://www.cyberciti.biz/faq/ubuntu-linux-gnome-system-log-viewer/ "Logs files on Linux")
 
 **For reference:**
 
@@ -120,3 +119,18 @@ At the end of this project, you are expected to be able to [explain to anyone](h
 ---
 ## Tasks
 
+### `0. `Transfer a file to your server
+> Write a Bash script that transfers a file from our client to a server:
+
+Requirements:
+
+- Accepts 4 parameters
+    1. The path to the file to be transferred
+    2. The IP of the server we want to transfer the file to
+    3. The username `scp` connects with
+    4. The path to the SSH private key that `scp` uses
+- Display `Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY` if less than 3 parameters passed
+- `scp` must transfer the file to the user home directory `~/`
+- Strict host key checking must be disabled when using `scp`
+
+Example:
