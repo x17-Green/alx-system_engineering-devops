@@ -134,3 +134,15 @@ Requirements:
 - Strict host key checking must be disabled when using `scp`
 
 Example:
+```
+└─[$] <git:(main*)> ./0-transfer_file                                             
+Usage: ./0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY
+└─[$] <git:(main*)> ssh ubuntu@100.25.140.95 -i ~/.ssh/school 'ls ~/'
+
+└─[$] <git:(main*)> vi extras/404.html
+└─[$] <git:(main*)> ./0-transfer_file ./extras/404.html 100.25.140.95 ubuntu ~/.ssh/school
+404.html                                                                                                                                                            100% 2244     5.7KB/s   00:00    
+└─[$] <git:(main*)> ssh ubuntu@100.25.140.95 -i ~/.ssh/school 'ls ~/'
+404.html
+└─[$] <git:(main*)>
+```
