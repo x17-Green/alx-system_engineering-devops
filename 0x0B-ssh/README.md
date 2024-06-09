@@ -83,7 +83,7 @@ ubuntu@server01:~$ exit
 Connection to 8.8.8.8 closed.
 green@greenhouse$ 
 ```
-- Solution File: [0-use_a_private_key](./`0-use_a_private_key`)
+- Solution File: [0-use_a_private_key](./0-use_a_private_key)
 
 <hr>
 
