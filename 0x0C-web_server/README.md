@@ -209,3 +209,15 @@ If things are not going as expected, make sure to check out Nginx logs, they can
 
 - Access the [tools space](https://intranet.alxswe.com/dashboards/my_tools "tools space")
 - Unlock the **GitHub student pack**: WARNING - this invitation link is unique to you and can’t be reclaimed! If you have any issue, please contact [GitHub education support](https://support.github.com/request/landing "GitHub education support")
+> Provide the domain name in your answer file.
+
+Requirement:
+
+- provide the domain name only (example: `foobar.tech`), no subdomain (example: `www.foobar.tech`)
+- configure your DNS records with an A entry so that your root domain points to your `web-01` IP address **Warning: the propagation of your records can take time (~1-2 hours)**
+- go to [your profile](https://intranet.alxswe.com/users/my_profile "your profile") and enter your domain in the `Project website url` field
+
+Example:
+```
+
+```
