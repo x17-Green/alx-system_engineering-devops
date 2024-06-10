@@ -1,16 +1,38 @@
 #!/usr/bin/env bash
-# Redirect 301: Moved Permanently
+# This script installs and configures Nginx to serve 'Hello World' on port 80
+# and redirects /redirect_me to another page with a 301 Moved Permanently status.
 
-# Install Nginx
-sudo apt-get update
-sudo apt-get install -y nginx
+if [ "$(id -u)" != "0" ]; then
+    exit 1
+fi
 
-# Add the redirection rule to the default Nginx configuration file
+apt-get update -y
+apt-get install nginx -y
+ufw allow 'Nginx HTTP'
+echo "Hello World!" > /var/www/html/index.html
+rm -f /etc/nginx/sites-enabled/default
 
-sudo sed -i '/server {/a 
-    location /redirect_me {\n
-        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n
-    }\n' /etc/nginx/sites-available/default
+cat << EOF > /etc/nginx/sites-available/default
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
 
-# Restart Nginx to apply the changes
-sudo service nginx restart
+        root /var/www/html;
+        index index.html;
+
+        server_name _;
+
+        location / {
+                try_files \$uri \$uri/ =404;
+            }
+
+        location /redirect_me {
+                return 301 https://github.com/x17-green;
+            }
+        }
+EOF
+
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+nginx -t
+service nginx restart
+
