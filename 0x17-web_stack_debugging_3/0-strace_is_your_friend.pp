@@ -1,4 +1,4 @@
-# Using strance to debug an Apache server returning a 500 error
+# Using strance to debug an Apache server returning a 500 error.
 
 class apache_fix {
   file { '/var/www/html':
