@@ -57,3 +57,6 @@ Requirements:
 - You can use whatever Puppet resource type you want for you fix
 
 Example:
+```
+
+```
