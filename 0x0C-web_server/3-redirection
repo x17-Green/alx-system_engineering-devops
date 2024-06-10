@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Redirect 301: Moved Permanently
+
+# Install Nginx
+sudo apt-get update
+sudo apt-get install -y nginx
+
+# Add the redirection rule to the default Nginx configuration file
+
+sudo sed -i '/server {/a 
+    location /redirect_me {\n
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n
+    }\n' /etc/nginx/sites-available/default
+
+# Restart Nginx to apply the changes
+sudo service nginx restart
