@@ -209,6 +209,7 @@ If things are not going as expected, make sure to check out Nginx logs, they can
 
 - Access the [tools space](https://intranet.alxswe.com/dashboards/my_tools "tools space")
 - Unlock the **GitHub student pack**: WARNING - this invitation link is unique to you and can’t be reclaimed! If you have any issue, please contact [GitHub education support](https://support.github.com/request/landing "GitHub education support")
+---
 > Provide the domain name in your answer file.
 
 Requirement:
@@ -219,5 +220,33 @@ Requirement:
 
 Example:
 ```
+└─[$] <git:(main*)> cat 2-setup_a_domain_name 
+green-net.tech
+└─[$] <git:(main*)> 
+└─[$] <git:(main*)> dig green-net.info
+;; communications error to 1.1.1.1#53: timed out
+;; communications error to 1.1.1.1#53: timed out
+;; communications error to 1.1.1.1#53: timed out
 
+; <<>> DiG 9.18.27 <<>> green-net.info
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 9197
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;green-net.info.			IN	A
+
+;; AUTHORITY SECTION:
+info.			1800	IN	SOA	a0.info.afilias-nst.info. hostmaster.donuts.email. 1717960650 7200 900 1209600 3600
+
+;; Query time: 170 msec
+;; SERVER: 8.8.8.8#53(8.8.8.8) (UDP)
+;; WHEN: Sun Jun 09 21:29:21 WAT 2024
+;; MSG SIZE  rcvd: 122
+└─[$] <git:(main*)> 
 ```
+> When your domain name is setup, please verify the Registrar here: [https://whois.whoisxmlapi.com/](https://whois.whoisxmlapi.com/ "https://whois.whoisxmlapi.com/") and you must see in the JSON response: `"registrarName": "Dotserve Inc"`
+
