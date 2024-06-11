@@ -128,3 +128,70 @@ Note that:
 ---
 - Solution File: [1-for_best_school](./1-for_best_school)
 ---
+### 2. While Best School loop
+> Write a Bash script that displays `Best School` 10 times.
+
+Requirements:
+
+- You must use the `while` loop (`for` and `until` are forbidden)
+```
+└─[$] <git:(main*)> ./2-while_best_school 
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+┌─[green@greenhouse]
+```
+- Solution File: [2-while_best_school](./2-while_best_school)
+
+---
+### `3.` Until Best School loop
+> Write a Bash script that displays `Best School` 10 times.
+
+Requirements:
+- You must use the `until` loop (`for` and `while` are forbidden)
+```
+└─[$] <git:(main*)> ./3-until_best_school 
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+┌─[green@greenhouse]
+```
+- Solution FIle: [3-until_best_school](./3-until_best_school)
+---
+### 4. If 9, say Hi!
+> Write a Bash script that displays `Best School` 10 times, but for the 9th iteration, displays `Best School` _and then_ `Hi` on a new line.
+
+Requirements:
+- You must use the `while` loop (`for` and `until` are forbidden)
+- You must use the `if` statement
+```
+└─[$] <git:(main*)> ./4-if_9_say_hi 
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Best School
+Hi
+Best School
+┌─[green@greenhouse]
+```
+- Solution File: [4-if_9_say_hi](./4-if_9_say_hi)
+---
