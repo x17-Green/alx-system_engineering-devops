@@ -1,0 +1,8 @@
+Host serv1
+    User ubuntu
+    Hostname 100.25.140.95
+    IdentityFile ~/.ssh/school
+    IdentitiesOnly yes
+    LogLevel QUIET
+    PasswordAuthentication no
+    PubkeyAuthentication yes

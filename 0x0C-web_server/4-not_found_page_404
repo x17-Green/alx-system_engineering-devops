@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+# This script installs and configures Nginx on a brand new
+# Ubuntu machine with a custom 404 error that that contains
+# the string 'Ceci n'est pas une page' on port 80
+
+if [ "$(id -u)" != "0" ]; then
+    exit 1
+fi
+
+apt-get update -y
+apt-get install nginx -y
+ufw allow 'Nginx HTTP'
+echo "Ceci n'est pas une page" > /var/www/html/error_404.html
+echo "Hello World!" > /var/www/html/index.html
+rm -f /etc/nginx/sites-enabled/default
+
+cat << EOF > /etc/nginx/sites-available/default
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        root /var/www/html;
+        index index.html;
+
+        server_name _;
+
+        location / {
+                try_files \$uri \$uri/ =404;
+            }
+
+        location /redirect_me {
+                return 301 https://github.com/x17-green;
+            }
+
+        error_page 404 /error_page.html;
+
+        location = /error_page.html {
+                root /var/www/html;
+            }
+        }
+EOF
+
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+nginx -t
+service nginx restart
+
