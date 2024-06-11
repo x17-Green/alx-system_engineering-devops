@@ -32,9 +32,9 @@ server {
                 return 301 https://github.com/x17-green;
             }
 
-        error_page 404 /error_page.html;
+        error_page 404 /error_404.html;
 
-        location = /error_page.html {
+        location = /error_404.html {
                 root /var/www/html;
             }
         }
