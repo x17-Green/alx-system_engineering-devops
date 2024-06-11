@@ -246,7 +246,84 @@ info.			1800	IN	SOA	a0.info.afilias-nst.info. hostmaster.donuts.email. 171796065
 ;; SERVER: 8.8.8.8#53(8.8.8.8) (UDP)
 ;; WHEN: Sun Jun 09 21:29:21 WAT 2024
 ;; MSG SIZE  rcvd: 122
+
 └─[$] <git:(main*)> 
 ```
 > When your domain name is setup, please verify the Registrar here: [https://whois.whoisxmlapi.com/](https://whois.whoisxmlapi.com/ "https://whois.whoisxmlapi.com/") and you must see in the JSON response: `"registrarName": "Dotserve Inc"`
 
+- Solution File: [2-setup_a_domain_name](./2-setup_a_domain_name)
+
+---
+### `3.`Redirection
+> Readme:
+
+- [Replace a line with multiple lines with sed](https://intranet.alxswe.com/rltoken/RRP9hX3MlQdABaKZD-Y_cA "Replace a line with multiple lines with sed")
+
+Configure your Nginx server so that `/redirect_me` is redirecting to another page.
+
+Requirements:
+
+- The redirection must be a “301 Moved Permanently”
+- You answer file should be a Bash script containing commands to automatically configure a Ubuntu machine to respect above requirements
+- Using what you did with `1-install_nginx_web_server`, write `3-redirection` so that it configures a brand new Ubuntu machine to the requirements asked in this task
+
+Example:
+```
+└─[$] <git:(main*)> curl -sI 100.25.140.95/redirect_me
+HTTP/1.1 301 Moved Permanently
+Server: nginx/1.18.0 (Ubuntu)
+Date: Tue, 11 Jun 2024 11:12:20 GMT
+Content-Type: text/html
+Content-Length: 178
+Connection: keep-alive
+Location: https://github.com/x17-green
+
+└─[$] <git:(main*)> 
+```
+
+- Solution File: [3-redirection](./3-redirection)
+---
+### 4. Not found page 404
+> Configure your Nginx server to have a custom 404 page that contains the string `Ceci n'est pas une page`.
+
+Requirements:
+
+- The page must return an HTTP 404 error code
+- The page must contain the string `Ceci n'est pas une page`
+- Using what you did with `3-redirection`, write `4-not_found_page_404` so that it configures a brand new Ubuntu machine to the requirements asked in this task
+
+Example:
+```
+└─[$] <git:(main*)> curl -sI 100.25.140.95/xyz        
+HTTP/1.1 404 Not Found
+Server: nginx/1.18.0 (Ubuntu)
+Date: Tue, 11 Jun 2024 11:16:09 GMT
+Content-Type: text/html
+Content-Length: 24
+Connection: keep-alive
+ETag: "66682ac2-18"
+
+└─[$] <git:(main*)> curl 100.25.140.95/xyzfoo
+Ceci n'est pas une page
+
+└─[$] <git:(main*)> 
+```
+- Solution File: [4-not_found_page_404](./4-not_found_page_404)
+---
+### 5. Install Nginx web server (w/ Puppet)
+> Time to practice configuring your server with Puppet! Just as you did before, we’d like you to install and configure an Nginx server using Puppet instead of Bash. To save time and effort, you should also include resources in your manifest to perform a 301 redirect when querying /redirect_me.
+
+Requirements:
+
+- Nginx should be listening on port 80
+- When querying Nginx at its root `/` with a GET request (requesting a page) using `curl`, it must return a page that contains the string `Hello World!`
+- The redirection must be a “301 Moved Permanently”
+- Your answer file should be a Puppet manifest containing commands to automatically configure an Ubuntu machine to respect above requirements
+```
+
+```
+- Solution File: [7-puppet_install_nginx_web_server.pp](./7-puppet_install_nginx_web_server.pp)
+---
+#### **Repo:**
+- GitHub repository: [alx-system_engineering-devops](../README.md)
+- Directory: [0x0C-web_server](./README.md)
