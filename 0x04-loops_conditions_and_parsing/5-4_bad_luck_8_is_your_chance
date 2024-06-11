@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # A bash script displaying "Best School"
 # 10 time with a Special 4th and 8th
 # iteration
