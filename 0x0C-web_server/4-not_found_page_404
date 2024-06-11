@@ -33,9 +33,9 @@ server {
             }
 
         error_page 404 /error_404.html;
-
         location = /error_404.html {
                 root /var/www/html;
+                internal;
             }
         }
 EOF
